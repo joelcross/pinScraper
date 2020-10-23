@@ -29,12 +29,12 @@ def makeScrapeDir():
     os.makedirs(currentDir + "/Scraped Images")
 
 
-# Returns path of folder containing downloaded images
+# Returns path of directory containing downloaded images
 def getScrapeDir():
     return os.path.dirname(os.path.realpath(__file__)) + "/Scraped Images"
 
 
-# Downloaded images from pinterest board to "Scraped Images" directory
+# Downloaded images from Pinterest board to "Scraped Images" directory
 def scrapeImages(link, destPath):
     # Create beautiful soup object from pinterest link
     source = urlopen(link).read()
@@ -53,16 +53,16 @@ def scrapeImages(link, destPath):
         count += 1
 
 
-# Sets desktop wallpaper to rotate through downloaded images
+# Sets desktop wallpaper to rotate through downloaded images at interval specified by user
 def setWallpaper(imgDir, delay):
     # AppleScript performs commands for MacOS
     script = '''
         tell application "System Events"
             tell current desktop
                 set pictures folder to "''' + imgDir + '''"
-                set picture rotation to 1 -- (0=off, 1=interval, 2=login, 3=sleep)
+                set picture rotation to 1
                 set random order to true
-                set change interval to ''' + delay + ''' -- in seconds
+                set change interval to ''' + delay + '''
             end tell
         end tell'''
 
