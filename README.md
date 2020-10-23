@@ -1,5 +1,5 @@
 # pinScraper
-Sets desktop background to rotate through images in a specified Pinterest board.
+Sets desktop background to rotate through images in a specified Pinterest board. Script can be run from any location on MacOS.
 
 ## Functions
 ### makeScrapeDir
